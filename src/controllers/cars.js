@@ -22,6 +22,7 @@ function create (req, res, next) {
 }
 
 function update (req, res, next) {
+    console.log('hello from controllers/update')
     const id = req.params.id
     const { make, model } = req.body
     if (!make || !model) return next ({ status: 400, message: `Make & model required` })
@@ -34,7 +35,7 @@ function deleteOne (req, res, next) {
     const id = req.params.id
     const data = models.deleteOne(id)
     if (!data) return next({ status: 404, message: `Car ID ${id} not found` })
-    res.status(204).json({ data })
+    res.status(202).json({ data })
 }
 
 module.exports = { getOne, getAll, create, update, deleteOne }

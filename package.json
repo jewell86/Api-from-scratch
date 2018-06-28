@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js live-server",
+    "dev": "nodemon app.js morgan",
     "start": "node app.js"
   },
   "keywords": [],

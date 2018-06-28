@@ -4,12 +4,15 @@ const port = process.env.PORT || 3000
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 const morgan = require('morgan')
-app.use(require(cors()))
+const cors = require('cors')
+app.use(cors())
 app.disable('x-powered-by')
-if(process.env.NODE_ENV === 'development') app.use(morgan('dev'))
+app.use(morgan('dev'))
 
 const carsRoutes = require('./src/routes/cars')
+console.log('hello from app.js')
 app.use('/cars', carsRoutes)
+app.use('/cars/:id', carsRoutes)
 
 app.use((req, res, next) => {
     const status = 404
@@ -28,7 +31,7 @@ app.use((req, res, next) => {
   })
   
   const listener = () => console.log(`Listening on port ${port}!`)
-  `Listening on port ${port}!`
+  
   app.listen(port, listener)
   
   module.exports = app

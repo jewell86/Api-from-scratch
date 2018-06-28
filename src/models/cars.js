@@ -28,7 +28,7 @@ function deleteOne(id) {
     cars.filter(car => car !== deletedCar)
     // const index = cars.indexOf(deletedCar)
     // cars.splice(index, 1)
-    return `Car ID ${id} has been deleted`
+    return deletedCar
 }
 
 
