@@ -22,7 +22,6 @@ function create (req, res, next) {
 }
 
 function update (req, res, next) {
-    console.log('hello from controllers/update')
     const id = req.params.id
     const { make, model } = req.body
     if (!make || !model) return next ({ status: 400, message: `Make & model required` })

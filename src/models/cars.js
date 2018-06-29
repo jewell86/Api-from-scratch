@@ -17,9 +17,8 @@ function create(make, model){
 }
 
 function update(id, make, model) {
-    const car = cars.find(car => car.id === id)
-    car.make = make
-    car.model = model
+    let car = cars.find(car => car.id === id)
+    car = { id, make, model }
     return car
 }
 
