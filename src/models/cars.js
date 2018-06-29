@@ -24,9 +24,8 @@ function update(id, make, model) {
 
 function deleteOne(id) {
     const deletedCar = cars.find(car => car.id === id)
-    cars.filter(car => car !== deletedCar)
-    // const index = cars.indexOf(deletedCar)
-    // cars.splice(index, 1)
+    const index = cars.indexOf(deletedCar)
+    cars.splice(index, 1)
     return deletedCar
 }
 
